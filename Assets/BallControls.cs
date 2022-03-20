@@ -7,6 +7,9 @@ public class BallControls : MonoBehaviour
 
     private Rigidbody2D rb2d;
 
+    float additive = 1F;
+    float direction = 1F; 
+
     void StartingBallDirection()
     {
         //Pick random starting direction for when a new ball is put into play
@@ -43,9 +46,21 @@ public class BallControls : MonoBehaviour
 
         if (coll.collider.CompareTag("Player"))
         {
+            if (rb2d.velocity.x > 0)
+            {     direction = 1;   }   //zach added this
+            else
+            { direction = -1; }     
+
+
             Vector2 vel;
-            vel.x = rb2d.velocity.x;
-            vel.y = (rb2d.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3);
+            vel.x = (rb2d.velocity.x) + (additive * direction);
+
+
+            if (rb2d.velocity.y > 0)
+            { direction = 1; }   //zach added this
+            else
+            { direction = -1; }
+            vel.y =( (rb2d.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3) ) + (additive * direction);
             rb2d.velocity = vel;
         }
     }
