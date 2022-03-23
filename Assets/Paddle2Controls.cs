@@ -12,18 +12,18 @@ public class Paddle2Controls : MonoBehaviour
     public float paddleSpeed = 10.0f;
     public float screenLimit = 4.25f;
 
-    private Rigidbody2D rb2d;
+    private Rigidbody2D paddle2;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        paddle2 = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        var vel = rb2d.velocity;
+        var vel = paddle2.velocity;
         if (Input.GetKey(paddleUp))
         {
             vel.y = paddleSpeed;
@@ -36,7 +36,7 @@ public class Paddle2Controls : MonoBehaviour
         {
             vel.y = 0;
         }
-        rb2d.velocity = vel;
+        paddle2.velocity = vel;
 
         var pos = transform.position;
         if (pos.y > screenLimit)
