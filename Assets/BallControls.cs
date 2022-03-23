@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BallControls : MonoBehaviour
 {
+    
+    
+
 
     private Rigidbody2D rb2d;
 
-    float additive = 1F;
-    float direction = 1F; 
+   
 
+    public float additive = 1F;  //multiplicative is too chaotic and builds too quickly
+    public float direction = 1F; // dont touch this it just does the stuff 
+    public float multiplicative = 1F; //multiplies forces on collisions 
+    public float speed = 0F; //im just trying to find speed and return it
     void StartingBallDirection()
     {
         //Pick random starting direction for when a new ball is put into play
@@ -46,21 +53,29 @@ public class BallControls : MonoBehaviour
 
         if (coll.collider.CompareTag("Player"))
         {
-            if (rb2d.velocity.x > 0)
-            {     direction = 1;   }   //zach added this
-            else
-            { direction = -1; }     
+
+
+
+           
+                if (rb2d.velocity.x > 0)
+                { direction = 1; }   //zach's experiment
+                else
+                { direction = -1; }
+       
 
 
             Vector2 vel;
-            vel.x = (rb2d.velocity.x) + (additive * direction);
+            vel.x = ((rb2d.velocity.x) + (additive * direction)) * multiplicative;
 
+            
+                if (rb2d.velocity.y > 0)
+                { direction = 1; }   //zach's experiment
+                else
+                { direction = -1; }
+            
+            
 
-            if (rb2d.velocity.y > 0)
-            { direction = 1; }   //zach added this
-            else
-            { direction = -1; }
-            vel.y =( (rb2d.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3) ) + (additive * direction);
+            vel.y =(( (rb2d.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3) ) + (additive * direction)) * multiplicative;
             rb2d.velocity = vel;
         }
     }
@@ -78,6 +93,13 @@ public class BallControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        speed = Mathf.Sqrt(Mathf.Pow(rb2d.velocity.x, 2) + Mathf.Pow(rb2d.velocity.y, 2));
+       
         
+    
+        
+       // = speed.ToString();
+
     }
 }
