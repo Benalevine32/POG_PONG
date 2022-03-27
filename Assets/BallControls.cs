@@ -14,12 +14,12 @@ public class BallControls : MonoBehaviour
 
         if (rand < 0.5)
         {
-            //Push Right
+            //Pushes ball Right
             ball.AddForce(new Vector2(200, -100));
         }
         else
         {
-            //Push Left
+            //Pushes ball Left
             ball.AddForce(new Vector2(-200, -100));
         }
     }
@@ -33,9 +33,9 @@ public class BallControls : MonoBehaviour
 
     void Restart()
     {
-        //Resets ball and determines start direction again
+        //Resets ball / determines start direction again
         ResetBall();
-        Invoke("StartingBallDirection", 1);
+        Invoke("StartingBallDirection", 1); //Invoke calls given function after given time in seconds
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -45,7 +45,9 @@ public class BallControls : MonoBehaviour
         {
             Vector2 vel;
             vel.x = ball.velocity.x;
-            vel.y = (ball.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3);
+            vel.y = (ball.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3); /*When ball hits paddles, changes
+                                                                                               * y direction to allow for hit
+                                                                                               *placements */
             ball.velocity = vel;
 
         }

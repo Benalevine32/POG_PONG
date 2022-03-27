@@ -24,7 +24,8 @@ public class Paddle1Controls : MonoBehaviour
     void Update()
     {
         var vel = paddle1.velocity;
-        if (Input.GetKey(paddleUp))
+
+        if (Input.GetKey(paddleUp))//Use keys to move paddle up/down
         {
             vel.y = paddleSpeed;
         }
@@ -39,7 +40,7 @@ public class Paddle1Controls : MonoBehaviour
         paddle1.velocity = vel;
 
         var pos = transform.position;
-        if (pos.y > screenLimit)
+        if (pos.y > screenLimit)//Keeps paddle from traveling offscreen
         {
             pos.y = screenLimit;
         }
