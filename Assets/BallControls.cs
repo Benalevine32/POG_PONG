@@ -6,7 +6,7 @@ public class BallControls : MonoBehaviour
 {
 
     private Rigidbody2D ball;
-
+    //int counter = 0;
     void StartingBallDirection()
     {
         //Pick random starting direction for when a new ball is put into play
@@ -63,7 +63,7 @@ public class BallControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+       
         ball = GetComponent<Rigidbody2D>();
 
         //Calls function after 3 seconds
@@ -74,6 +74,16 @@ public class BallControls : MonoBehaviour
     void Update()
     {
         
-        
+        /*
+        if (Input.GetKey(KeyCode.T))//Use keys to move paddle up/down
+        {
+            counter++;
+            if (counter == 60)
+            {
+                Instantiate(ball, new Vector2(0, 0), Quaternion.identity);
+                counter = 0;
+            }
+        }
+        */
     }
 }
