@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class BallControls : MonoBehaviour
 {
-    
-    
+
+
+    public float speed = 0F; //im just trying to find speed and return it
+
+    public TextMeshProUGUI Text;
+
+
 
 
     private Rigidbody2D rb2d;
@@ -16,7 +23,6 @@ public class BallControls : MonoBehaviour
     public float additive = 1F;  //multiplicative is too chaotic and builds too quickly
     public float direction = 1F; // dont touch this it just does the stuff 
     public float multiplicative = 1F; //multiplies forces on collisions 
-    public float speed = 0F; //im just trying to find speed and return it
     void StartingBallDirection()
     {
         //Pick random starting direction for when a new ball is put into play
@@ -99,7 +105,7 @@ public class BallControls : MonoBehaviour
         
     
         
-       // = speed.ToString();
+       Text = speed.ToString;
 
     }
 }
