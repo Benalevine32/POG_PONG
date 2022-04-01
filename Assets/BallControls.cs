@@ -31,7 +31,18 @@ public class BallControls : MonoBehaviour
     {
         //Returns ball to center of screen
         ballRB2D.velocity = Vector2.zero;
+
+
+
         transform.position = Vector2.zero;
+
+        //i want the counter from playercontrols
+
+        //would be cool if balls didnt spawn on top of eachother
+        //have a counter running in another script that goes up on each frame and resets at 5 to -5
+        //when ball is reset, convert that counter to vector
+
+
     }
 
     void Restart()
@@ -77,7 +88,13 @@ public class BallControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     
+
+
+        //i want the speed from player controls......
+       // speed = 
+        
+        
+
         //////////////////////////initialize speed 
         ///i want a speed variable stored somewhere else and visisble to player and interactible with player
 
