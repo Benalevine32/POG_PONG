@@ -6,6 +6,9 @@ public class BallControls : MonoBehaviour
 {
     public GameObject Ball;
     private Rigidbody2D ballRB2D;
+
+    float speed = 25F;
+    int direction = 1; 
     
     void StartingBallDirection()
     {
@@ -41,10 +44,21 @@ public class BallControls : MonoBehaviour
     void OnCollisionEnter2D(Collision2D coll)
     {
 
-        if (coll.collider.CompareTag("Player"))
+        if (coll.collider.CompareTag("Player") || coll.collider.CompareTag("Ball"))
         {
             Vector2 vel;
-            vel.x = ballRB2D.velocity.x;
+
+           if( ballRB2D.velocity.x > 0)
+            {
+                direction = 1; 
+
+            }
+            else
+            {
+                direction = -1; 
+
+            }
+            vel.x = speed * direction;
             vel.y = (ballRB2D.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3); /*When ball hits paddles, changes
                                                                                                * y direction to allow for hit
                                                                                                *placements */
@@ -63,7 +77,11 @@ public class BallControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+     
+        //////////////////////////initialize speed 
+        ///i want a speed variable stored somewhere else and visisble to player and interactible with player
+
+
         ballRB2D = GetComponent<Rigidbody2D>();
 
         //Calls function after 3 seconds
