@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BallControls : MonoBehaviour
 {
-
-    private Rigidbody2D rb2d;
-
+    public GameObject Ball;
+    private Rigidbody2D ballRB2D;
+    
     void StartingBallDirection()
     {
         //Pick random starting direction for when a new ball is put into play
@@ -14,28 +14,28 @@ public class BallControls : MonoBehaviour
 
         if (rand < 0.5)
         {
-            //Push Right
-            rb2d.AddForce(new Vector2(200, -100));
+            //Pushes ball Right
+            ballRB2D.AddForce(new Vector2(200, -100));
         }
         else
         {
-            //Push Left
-            rb2d.AddForce(new Vector2(-200, -100));
+            //Pushes ball Left
+            ballRB2D.AddForce(new Vector2(-200, -100));
         }
     }
 
     void ResetBall()
     {
         //Returns ball to center of screen
-        rb2d.velocity = Vector2.zero;
+        ballRB2D.velocity = Vector2.zero;
         transform.position = Vector2.zero;
     }
 
     void Restart()
     {
-        //Resets ball and determines start direction again
+        //Resets ball / determines start direction again
         ResetBall();
-        Invoke("StartingBallDirection", 1);
+        Invoke("StartingBallDirection", 1); //Invoke calls given function after given time in seconds
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -44,17 +44,27 @@ public class BallControls : MonoBehaviour
         if (coll.collider.CompareTag("Player"))
         {
             Vector2 vel;
-            vel.x = rb2d.velocity.x;
-            vel.y = (rb2d.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3);
-            rb2d.velocity = vel;
+            vel.x = ballRB2D.velocity.x;
+            vel.y = (ballRB2D.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3); /*When ball hits paddles, changes
+                                                                                               * y direction to allow for hit
+                                                                                               *placements */
+            ballRB2D.velocity = vel;
+
+        }
+
+        if ((coll.collider.CompareTag("Left")) || (coll.collider.CompareTag("Right")))
+        {
+            //Deletes ball when it hits left or right wall, and creates new one
+            Instantiate(ballRB2D, new Vector2(0, 0), Quaternion.identity);
+            Destroy(ballRB2D.gameObject);
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
-        rb2d = GetComponent<Rigidbody2D>();
+       
+        ballRB2D = GetComponent<Rigidbody2D>();
 
         //Calls function after 3 seconds
         Invoke("StartingBallDirection", 3);
@@ -63,6 +73,7 @@ public class BallControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         
     }
 }
