@@ -23,7 +23,7 @@ public class SpeedDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    txt.text = "yea";
+    //txt.text = "yea";
         
     }
 }

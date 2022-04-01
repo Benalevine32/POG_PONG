@@ -14,7 +14,7 @@ public class BallControls : MonoBehaviour
     public TextMeshProUGUI Text;
 
 
-
+    public float speedConst = 25F; //the speed i want to set bal to on all colls
 
     private Rigidbody2D rb2d;
 
@@ -71,17 +71,19 @@ public class BallControls : MonoBehaviour
 
 
             Vector2 vel;
-            vel.x = ((rb2d.velocity.x) + (additive * direction)) * multiplicative;
+            vel.x = speedConst * direction;
+                //((rb2d.velocity.x) + (additive * direction)) * multiplicative;
 
             
                 if (rb2d.velocity.y > 0)
                 { direction = 1; }   //zach's experiment
                 else
                 { direction = -1; }
-            
-            
 
-            vel.y =(( (rb2d.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3) ) + (additive * direction)) * multiplicative;
+
+
+            vel.y = ((rb2d.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3));
+                //+ (additive * direction)) * multiplicative;
             rb2d.velocity = vel;
         }
     }
@@ -99,13 +101,13 @@ public class BallControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        speed = Mathf.Sqrt(Mathf.Pow(rb2d.velocity.x, 2) + Mathf.Pow(rb2d.velocity.y, 2));
-       
         
+        speed = Mathf.Sqrt(Mathf.Pow(rb2d.velocity.x, 2) + Mathf.Pow(rb2d.velocity.y, 2));
+
+        Debug.Log(speed.ToString());
     
         
-       Text = speed.ToString;
+      // Text = speed.ToString;
 
     }
 }
