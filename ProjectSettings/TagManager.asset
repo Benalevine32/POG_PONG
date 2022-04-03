@@ -6,8 +6,13 @@ TagManager:
   tags:
   - Ball
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Left
   - Right
+=======
+  - Right
+  - Left
+>>>>>>> parent of 93281f6 (Merge branch 'main' into Ben(1))
 =======
   - Right
   - Left
