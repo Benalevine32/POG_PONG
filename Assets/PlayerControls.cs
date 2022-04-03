@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    public GameObject ball;
+    public GameObject Ball;
 
      
         
@@ -13,7 +13,7 @@ public class PlayerControls : MonoBehaviour
 void Start()
     {
         Debug.Log("Ball Created");
-        Instantiate(ball, new Vector2(0, 0), Quaternion.identity);
+        Instantiate(Ball, new Vector2(0, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ void Start()
         //Create new ball on keypress
         if (Input.GetKeyUp(KeyCode.T))
         {
-            Instantiate(ball, new Vector2(0, 0), Quaternion.identity);
+            Instantiate(Ball, new Vector2(0, 0), Quaternion.identity);
         }
     }
 }

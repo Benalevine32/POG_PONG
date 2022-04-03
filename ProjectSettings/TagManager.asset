@@ -5,8 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+
   - Left
   - Right
+ main
   layers:
   - Default
   - TransparentFX
@@ -42,7 +44,7 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-    uniqueID: 867655529
+    uniqueID: 3615266703
     locked: 0
   - name: Default
     uniqueID: 0
