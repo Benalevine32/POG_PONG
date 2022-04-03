@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BallControls : MonoBehaviour
 {
-    public GameObject Ball;
-    private Rigidbody2D ballRB2D;
-    
+
+    private Rigidbody2D ball;
+
     void StartingBallDirection()
     {
         //Pick random starting direction for when a new ball is put into play
@@ -15,19 +15,19 @@ public class BallControls : MonoBehaviour
         if (rand < 0.5)
         {
             //Pushes ball Right
-            ballRB2D.AddForce(new Vector2(200, -100));
+            ball.AddForce(new Vector2(200, -100));
         }
         else
         {
             //Pushes ball Left
-            ballRB2D.AddForce(new Vector2(-200, -100));
+            ball.AddForce(new Vector2(-200, -100));
         }
     }
 
     void ResetBall()
     {
         //Returns ball to center of screen
-        ballRB2D.velocity = Vector2.zero;
+        ball.velocity = Vector2.zero;
         transform.position = Vector2.zero;
     }
 
@@ -44,27 +44,27 @@ public class BallControls : MonoBehaviour
         if (coll.collider.CompareTag("Player"))
         {
             Vector2 vel;
-            vel.x = ballRB2D.velocity.x;
-            vel.y = (ballRB2D.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3); /*When ball hits paddles, changes
+            vel.x = ball.velocity.x;
+            vel.y = (ball.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3); /*When ball hits paddles, changes
                                                                                                * y direction to allow for hit
                                                                                                *placements */
-            ballRB2D.velocity = vel;
+            ball.velocity = vel;
 
         }
 
         if ((coll.collider.CompareTag("Left")) || (coll.collider.CompareTag("Right")))
         {
             //Deletes ball when it hits left or right wall, and creates new one
-            Instantiate(ballRB2D, new Vector2(0, 0), Quaternion.identity);
-            Destroy(ballRB2D.gameObject);
+            Instantiate(ball, new Vector2(0, 0), Quaternion.identity);
+            Destroy(ball.gameObject);
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-       
-        ballRB2D = GetComponent<Rigidbody2D>();
+
+        ball = GetComponent<Rigidbody2D>();
 
         //Calls function after 3 seconds
         Invoke("StartingBallDirection", 3);
