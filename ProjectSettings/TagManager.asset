@@ -5,8 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+<<<<<<< HEAD
   - Left
   - Right
+=======
+  - Right
+  - Left
+>>>>>>> parent of 93281f6 (Merge branch 'main' into Ben(1))
   layers:
   - Default
   - TransparentFX

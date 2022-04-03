@@ -14,7 +14,11 @@ GameObject:
   - component: {fileID: 5821938027238949861}
   - component: {fileID: 5821938027238949858}
   m_Layer: 0
+<<<<<<< HEAD
   m_Name: Ball
+=======
+  m_Name: ball
+>>>>>>> parent of 93281f6 (Merge branch 'main' into Ben(1))
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,9 +128,15 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< HEAD
   m_Offset: {x: -0.3, y: 0.3}
   serializedVersion: 2
   m_Radius: 2
+=======
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
+>>>>>>> parent of 93281f6 (Merge branch 'main' into Ben(1))
 --- !u!114 &5821938027238949858
 MonoBehaviour:
   m_ObjectHideFlags: 0
