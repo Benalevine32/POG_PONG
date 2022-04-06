@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Paddle1Controls : MonoBehaviour
 {
+
     //Set keys to move paddles
     public KeyCode paddleUp = KeyCode.W;
     public KeyCode paddleDown = KeyCode.S;
