@@ -110,7 +110,7 @@ public class BallControls : MonoBehaviour
         if ((coll.collider.CompareTag("Left")) || (coll.collider.CompareTag("Right")))
         {
             //Deletes ball when it hits left or right wall, and creates new one
-            GameObject displaything = GameObject.Find("SpeedThing");
+            GameObject displaything = GameObject.Find("SpeedTest");
             SpeedDisplay speedDis = displaything.GetComponent<SpeedDisplay>();
 
 
@@ -166,7 +166,7 @@ public class BallControls : MonoBehaviour
 
 
 
-        GameObject displaything = GameObject.Find("SpeedThing");
+        GameObject displaything = GameObject.Find("SpeedTest");
 
 
         SpeedDisplay speedDis = displaything.GetComponent<SpeedDisplay>();
