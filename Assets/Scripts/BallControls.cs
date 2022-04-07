@@ -18,7 +18,7 @@ public class BallControls : MonoBehaviour
 
     //zev end
 
-
+    //CJG Start
     void StartingBallDirection()
     {
         //Pick random starting direction for when a new ball is put into play
@@ -58,7 +58,7 @@ public class BallControls : MonoBehaviour
         ResetBall();
         Invoke("StartingBallDirection", 1); //Invoke calls given function after given time in seconds
     }
-
+    //CJG End
     void OnCollisionEnter2D(Collision2D coll)
     {
 
@@ -208,7 +208,7 @@ public class BallControls : MonoBehaviour
     void Update()
     {
 
-        //zev added this trash
+        //zev added this beautiful piece of code
         if (counter < 3)
         {
             counter++;

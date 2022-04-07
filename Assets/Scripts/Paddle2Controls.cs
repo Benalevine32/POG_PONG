@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Paddle2Controls : MonoBehaviour
 {
-    static int score = 0;
+    //CJG Start
     //Set keys to move paddles
     public KeyCode paddleUp = KeyCode.I;
     public KeyCode paddleDown = KeyCode.K;
@@ -51,4 +51,5 @@ public class Paddle2Controls : MonoBehaviour
         }
         transform.position = pos;
     }
+    //CJG End
 }

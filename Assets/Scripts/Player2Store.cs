@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player2Store : MonoBehaviour
 {
-
+    //CJG Start
     public Text StoreMenu;
     int size = 0;
     int bsize = 0;
@@ -26,4 +26,5 @@ public class Player2Store : MonoBehaviour
                          $"Ball Size:{bsize}\n" +
                          $"Speed: {speed}";
     }
+    //CJG End
 }
