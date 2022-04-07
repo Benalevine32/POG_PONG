@@ -2,28 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Paddle2Controls : MonoBehaviour
+public class Paddle1Controls : MonoBehaviour
 {
+
     //Set keys to move paddles
-    public KeyCode paddleUp = KeyCode.I;
-    public KeyCode paddleDown = KeyCode.K;
+    public KeyCode paddleUp = KeyCode.W;
+    public KeyCode paddleDown = KeyCode.S;
 
     //Set speed and screen limits for paddles
     public float paddleSpeed = 10.0f;
     public float screenLimit = 4.25f;
 
-    private Rigidbody2D paddle2;
+    private Rigidbody2D paddle1;
 
     // Start is called before the first frame update
     void Start()
     {
-        paddle2 = GetComponent<Rigidbody2D>();
+        paddle1 = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        var vel = paddle2.velocity;
+        var vel = paddle1.velocity;
 
         if (Input.GetKey(paddleUp))//Use keys to move paddle up/down
         {
@@ -37,7 +38,7 @@ public class Paddle2Controls : MonoBehaviour
         {
             vel.y = 0;
         }
-        paddle2.velocity = vel;
+        paddle1.velocity = vel;
 
         var pos = transform.position;
         if (pos.y > screenLimit)//Keeps paddle from traveling offscreen
