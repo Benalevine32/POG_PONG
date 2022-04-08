@@ -7,6 +7,7 @@ public class Player2Store : MonoBehaviour
 {
     //CJG Start
     public Text StoreMenu;
+    int player2Score = 0;
     int size = 0;
     int bsize = 0;
     int speed = 0;
