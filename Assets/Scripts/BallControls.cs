@@ -178,7 +178,9 @@ public class BallControls : MonoBehaviour
 
         Ball_SpriteRenderer = GetComponent<SpriteRenderer>();
 
-        Ball_SpriteRenderer.color = Color.HSVToRGB(1F,  (speed/30), 1F);
+        //Ball_SpriteRenderer.color = Color.HSVToRGB(1F,  ((speed/30) - (10 / 30)), 1F); //HSV Color
+        Color ballColor = new Color(1, (1 - ((speed - 10) / 30)), (1 - ((speed - 10) / 30)), 1f); //RGB Color
+        Ball_SpriteRenderer.color = ballColor;
 
 
         //zev is trying so hard to yoink that variable but unity is uncooperative 
