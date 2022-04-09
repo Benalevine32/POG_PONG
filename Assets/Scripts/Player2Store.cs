@@ -8,9 +8,9 @@ public class Player2Store : MonoBehaviour
     //CJG Start
     public Text StoreMenu;
     int player2Score = 0;
-    int size = 0;
-    int bsize = 0;
-    int speed = 0;
+    int speedUpgrade = 0;
+    int ballUpgrade = 0;
+    int paddleUpgrade = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +23,9 @@ public class Player2Store : MonoBehaviour
     {
 
         //StoreMenu.text = "Paddle Size: " + paddleSize.ToString();
-        StoreMenu.text = $"Paddle Size:{size}\n" +
-                         $"Ball Size:{bsize}\n" +
-                         $"Speed: {speed}";
+        StoreMenu.text = $"[8]Speed++:{speedUpgrade}\n" +
+                         $"[9]Ball Count:{ballUpgrade}\n" +
+                         $"[0]Ball Speed:{paddleUpgrade}";
     }
     //CJG End
 }

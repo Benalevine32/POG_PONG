@@ -27,7 +27,9 @@ public class MainStoreScript : MonoBehaviour
 
 
         StoreMenu.text = $"Item Shop\n" +
+                         $"#\n" +
                          $"\n" +
+                         $"$\n" +
                          $"speed: {speed}";
     }
 }
