@@ -12,6 +12,8 @@ public class SpeedDisplay : MonoBehaviour
 
     public float speed1 = 7F;
 
+    public int numSpeedIncreases = 1;
+
     public int plyr1Score = 0;
     public int player1Points = 0;
     public int plyr2Score = 0;

@@ -7,10 +7,10 @@ public class Player1Store : MonoBehaviour
 {
     //CJG Start
     public GameObject Ball;
-    public Text StoreMenu;
+    public Text StoreMenu; /*
     int speedUpgrade = 0;
     int ballUpgrade = 0;
-    int paddleUpgrade = 0;
+    int paddleUpgrade = 0; */
     int speedUpgradePrice = 250;
     int ballIncreasePrice = 250;
     int paddleUpgradePrice = 250;
@@ -34,7 +34,8 @@ public class Player1Store : MonoBehaviour
         {
             if ((speedDis.player1Points) >= speedUpgradePrice)
             {
-                speedDis.speed1 += 1;
+                speedDis.speed1 += 3;
+                speedDis.numSpeedIncreases++;
                 speedDis.player1Points -= speedUpgradePrice;
                 speedUpgradePrice *= 2;
             }

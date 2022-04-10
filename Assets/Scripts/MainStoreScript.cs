@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MainStoreScript : MonoBehaviour
 {
     public Text StoreMenu;
-    float speed = 1;
+    int speed = 1;
 
 
 
@@ -22,8 +22,9 @@ public class MainStoreScript : MonoBehaviour
         GameObject displaything = GameObject.Find("SpeedTest");
         SpeedDisplay speedDis = displaything.GetComponent<SpeedDisplay>();
 
-        speed = speedDis.speed1;
-        speed = speed - 6;
+        //speed = speedDis.speed1;
+        //speed = (speed - 6) - (3 * (speedDis.numSpeedIncreases));
+        speed = speedDis.numSpeedIncreases;
 
 
         StoreMenu.text = $"Item Shop\n" +
