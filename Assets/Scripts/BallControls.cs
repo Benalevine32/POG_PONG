@@ -131,12 +131,13 @@ public class BallControls : MonoBehaviour
             {
                 speedDis.plyr1Score++;
                 speedDis.plyr1Score++;
+                //player 1 gains 2 points
 
                 if ((speedDis.player1Points) < 10000)
                 {
                     speedDis.player1Points += 250;
                 }
-                //player 1 gains 2 points
+                
 
 
             }
@@ -190,6 +191,8 @@ public class BallControls : MonoBehaviour
 
 
         //zev is trying so hard to yoink that variable but unity is uncooperative 
+        //great job zev you did it
+        //cjg is proud of you pal
 
 
 
