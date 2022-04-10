@@ -5,26 +5,25 @@ using UnityEngine.UI;
 
 public class P2_Goal : MonoBehaviour
 {
+    public static P2_Goal instance;
     public Text P2_Score;
-    public int P2Score;
-    public GameObject ball;
-
-
-    void OnCollisionEnter2D(Collision2D ball)
+    public int P2Score=0;
+   
+    public void AddP2()
     {
-        if (ball.collider.CompareTag("Left"))
-        {
-            P2Score++;
-            P2_Score.text = P2Score.ToString();
-
-        }
+        P2Score++;
+        P2_Score.text = P2Score.ToString();
+    }
+    private void Awake()
+    {
+        instance = this;
     }
 
     // Start is called before the first frame update
     public void Start()
     {
-        P2Score = 0;
-        P2_Score.text = P2Score.ToString();
+        
+        
       
 
 
@@ -33,9 +32,9 @@ public class P2_Goal : MonoBehaviour
         // Update is called once per frame
        void Update()
         {
-            P2_Score.text = P2Score.ToString();
+       
 
-        }
+    }
     
 }
 

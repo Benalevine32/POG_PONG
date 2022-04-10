@@ -14,9 +14,7 @@ GameObject:
   - component: {fileID: 5821938027238949861}
   - component: {fileID: 5821938027238949858}
   m_Layer: 0
-
-  m_Name: Ball
-main
+  m_Name: ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,11 +124,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-
-  m_Offset: {x: -0.3, y: 0.3}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
- main
+  m_Radius: 0.5
 --- !u!114 &5821938027238949858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,3 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242ee563a309ba34f80f50b619a95840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ball: {fileID: 5821938027238949862}
