@@ -14,6 +14,14 @@ public class Paddle1Controls : MonoBehaviour
     public float screenLimit = 4.25f;
 
     private Rigidbody2D paddle1;
+    private Vector3 growSize = new Vector3(0f, 0.05f, 0f);
+
+
+    public void Grow()
+    {
+        transform.localScale += growSize;
+
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 747157338}
   - component: {fileID: 747157340}
   - component: {fileID: 747157339}
+  - component: {fileID: 747157341}
   m_Layer: 5
   m_Name: Player 1 Score
   m_TagString: Untagged
@@ -545,6 +546,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747157337}
   m_CullTransparentMesh: 1
+--- !u!114 &747157341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747157337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7833a463e420c47aec1158f878b6bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScorePoints: {fileID: 747157339}
 --- !u!1 &828466237
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +590,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed1: 7
   plyr1Score: 0
+  player1Points: 0
   plyr2Score: 0
+  player2Points: 0
 --- !u!4 &828466239
 Transform:
   m_ObjectHideFlags: 0
@@ -887,7 +903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 700, y: -150}
+  m_AnchoredPosition: {x: 650, y: -150}
   m_SizeDelta: {x: 950, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1470500914
@@ -1081,6 +1097,7 @@ GameObject:
   - component: {fileID: 1523294969}
   - component: {fileID: 1523294971}
   - component: {fileID: 1523294970}
+  - component: {fileID: 1523294972}
   m_Layer: 5
   m_Name: Player 2 Score
   m_TagString: Untagged
@@ -1151,6 +1168,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523294968}
   m_CullTransparentMesh: 1
+--- !u!114 &1523294972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523294968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b5b8ebb3556d149bccbbc5c54919b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScorePoints: {fileID: 1523294970}
 --- !u!1 &1609530717
 GameObject:
   m_ObjectHideFlags: 0
