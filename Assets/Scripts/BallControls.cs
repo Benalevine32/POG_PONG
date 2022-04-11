@@ -12,7 +12,9 @@ public class BallControls : MonoBehaviour
 
     //zev start
     float speed = 7F;
+    int speed2 = 0;
     int direction = 1;
+    int rand = 0;
 
     public int counter = -3;
 
@@ -22,8 +24,8 @@ public class BallControls : MonoBehaviour
     void StartingBallDirection()
     {
         //Pick random starting direction for when a new ball is put into play
-       // float rand = Random.Range(0, 1);
-
+        //rand = Random.Range(0, 1);
+       
         //zev added counter
         if (counter < 0)
         {
@@ -94,9 +96,21 @@ public class BallControls : MonoBehaviour
                 direction = 1;
 
             }
-            else
+            else if (ballRB2D.velocity.x < 0)
             {
                 direction = -1;
+
+            }
+            else
+            {
+                //if balls spawn on top of eachother, vel is always 0, so before it favored the else, now, it is more random if the vel is zero
+                if(counter > 0)
+                    direction = 1;
+
+                if (counter < 0)
+                    direction = -1;
+
+
 
             }
             vel.x = speed/2 * direction;
@@ -116,15 +130,17 @@ public class BallControls : MonoBehaviour
 
             if ((coll.collider.CompareTag("Left")))
             {
+
                 //player 2 gains 2 points
                 //BL Start
                  Debug.Log("YO");
                 speedDis.plyr2Score++;
-                speedDis.plyr2Score++;
 
                 if ((speedDis.player2Points) < 10000)
                 {
-                    speedDis.player2Points += 250;
+
+
+                    speedDis.player2Points += (250  * (speed2/7)) ;
                 }
             }
 
@@ -132,12 +148,14 @@ public class BallControls : MonoBehaviour
             {
                  Debug.Log("YO");
                 speedDis.plyr1Score++;
-                speedDis.plyr1Score++;
-                //player 1 gains 2 points
+                //player 1 scores
 
                 if ((speedDis.player1Points) < 10000)
                 {
-                    speedDis.player1Points += 250;
+
+
+
+                    speedDis.player1Points += (250 * (speed2 / 7));
                 }
                 
 
@@ -170,7 +188,7 @@ public class BallControls : MonoBehaviour
         SpriteRenderer Ball_SpriteRenderer;
 
 
-
+        
 
 
 
@@ -182,6 +200,7 @@ public class BallControls : MonoBehaviour
 
         speed = speedDis.speed1;
 
+        speed2 = ((int)speed);
 
 
 
@@ -234,5 +253,7 @@ public class BallControls : MonoBehaviour
 
         }
 
+
+       
     }
 }
