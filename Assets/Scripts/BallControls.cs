@@ -117,7 +117,8 @@ public class BallControls : MonoBehaviour
             if ((coll.collider.CompareTag("Left")))
             {
                 //player 2 gains 2 points
-                
+                //BL Start
+                 Debug.Log("YO");
                 speedDis.plyr2Score++;
                 speedDis.plyr2Score++;
 
@@ -129,6 +130,7 @@ public class BallControls : MonoBehaviour
 
             if ((coll.collider.CompareTag("Right")))
             {
+                 Debug.Log("YO");
                 speedDis.plyr1Score++;
                 speedDis.plyr1Score++;
                 //player 1 gains 2 points
@@ -139,7 +141,7 @@ public class BallControls : MonoBehaviour
                 }
                 
 
-
+                //BL End
             }
 
 
