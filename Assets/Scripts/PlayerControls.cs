@@ -8,7 +8,7 @@ public class PlayerControls : MonoBehaviour
 
     public GameObject Ball;
 
-
+    public GameObject autopaddle;
   
 
     // Start is called before the first frame update
@@ -32,6 +32,16 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.T))
         {
             Instantiate(Ball, new Vector2(0, 0), Quaternion.identity);
+
+            
+        }
+
+        if (Input.GetKeyUp(KeyCode.H))
+        {
+            Instantiate(autopaddle, new Vector3(8, -4F), Quaternion.identity);
+
+
+
         }
 
         //CJG End

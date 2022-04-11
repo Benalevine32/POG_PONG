@@ -204,7 +204,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &134842875
 SpriteRenderer:
@@ -269,7 +269,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453509102
 GameObject:
@@ -589,6 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed1: 7
+  numSpeedIncreases: 1
   plyr1Score: 0
   player1Points: 0
   plyr2Score: 0
@@ -1032,7 +1033,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1495601646
 MonoBehaviour:
@@ -1047,6 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ball: {fileID: 5821938027238949862, guid: 957232e57157ca541ba3ab11221b8a38, type: 3}
+  autopaddle: {fileID: 5996302590062774907, guid: fdbf51a9c76a8824a86e3c774eb37901, type: 3}
 --- !u!114 &1495601647
 MonoBehaviour:
   m_ObjectHideFlags: 0
