@@ -8,9 +8,12 @@ public class autopaddle : MonoBehaviour
 
     //ZEV Start
 
-    //Set speed and screen limits for paddles
+    //this code is cannibalized code from cole, but im chillin (mine now \_(:D)_/ )
+
+    //Set speed and screen limits for auto paddles
     public float paddleSpeed = 5f;
     public float screenLimit = 4f;
+    public bool trueness = false; 
 
     private Rigidbody2D auto;
 
@@ -31,21 +34,34 @@ public class autopaddle : MonoBehaviour
 
 
 
-       
+
+
+
+        if (pos.y > screenLimit)
+        {
+            trueness = false;
+
+
+        }
+        
+        
+        if (pos.y < -screenLimit)
+        {
+            trueness = true; 
+        }
+
+        auto.velocity = vel;
 
 
 
 
-
-
-
-        if (pos.y < 0)//Keeps paddle from traveling offscreen
+        if (trueness == false)
         {
             vel.y = -paddleSpeed;
 
 
         }
-        else if (pos.y == -screenLimit)
+        else if (trueness == true)
         {
             vel.y = paddleSpeed;
         }
@@ -59,19 +75,6 @@ public class autopaddle : MonoBehaviour
 
 
 
-
-        /*
-        if (pos.y > screenLimit)//Keeps paddle from traveling offscreen
-        {
-            pos.y = screenLimit;
-        }
-        else if (pos.y < -screenLimit)
-        {
-            pos.y = -screenLimit;
-        }
-        transform.position = pos;
-
-        */
     }
     //ZEV End
 }
