@@ -117,22 +117,31 @@ public class BallControls : MonoBehaviour
             if ((coll.collider.CompareTag("Left")))
             {
                 //player 2 gains 2 points
-                
+                //BL Start
+                 Debug.Log("YO");
                 speedDis.plyr2Score++;
                 speedDis.plyr2Score++;
 
-                    
+                if ((speedDis.player2Points) < 10000)
+                {
+                    speedDis.player2Points += 250;
+                }
             }
 
             if ((coll.collider.CompareTag("Right")))
             {
+                 Debug.Log("YO");
                 speedDis.plyr1Score++;
                 speedDis.plyr1Score++;
-
-
                 //player 1 gains 2 points
 
+                if ((speedDis.player1Points) < 10000)
+                {
+                    speedDis.player1Points += 250;
+                }
+                
 
+                //BL End
             }
 
 
@@ -178,10 +187,14 @@ public class BallControls : MonoBehaviour
 
         Ball_SpriteRenderer = GetComponent<SpriteRenderer>();
 
-        Ball_SpriteRenderer.color = Color.HSVToRGB(1F,  (speed/30), 1F);
+        //Ball_SpriteRenderer.color = Color.HSVToRGB(1F,  ((speed/30) - (10 / 30)), 1F); //HSV Color
+        Color ballColor = new Color(1, (1 - ((speed - 10) / 30)), (1 - ((speed - 10) / 30)), 1f); //RGB Color
+        Ball_SpriteRenderer.color = ballColor;
 
 
         //zev is trying so hard to yoink that variable but unity is uncooperative 
+        //great job zev you did it
+        //cjg is proud of you pal
 
 
 
