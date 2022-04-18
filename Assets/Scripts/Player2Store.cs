@@ -29,6 +29,7 @@ public class Player2Store : MonoBehaviour
 
         GameObject paddle = GameObject.Find("paddle2");
         Paddle2Controls paddleX = paddle.GetComponent<Paddle2Controls>();
+       
 
         if (Input.GetKeyUp(KeyCode.Alpha8))
         {

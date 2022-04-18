@@ -60,12 +60,13 @@ public class Player1Store : MonoBehaviour
                 paddleUpgradePrice *= 2;
             }
         }
-
+        
 
         //StoreMenu.text = "Paddle Size: " + paddleSize.ToString();
         StoreMenu.text = $"[1]Speed++:{speedUpgradePrice}\n" +
                          $"[2]Ball Count:{ballIncreasePrice}\n" +
-                         $"[3]PaddleSize:{paddleUpgradePrice}";
+                         $"[3]PaddleSize:{paddleUpgradePrice}\n"+ 
+                         $"[4]PaddleShrink:{paddleUpgradePrice}"; // cb
     }
     //CJG End
 }

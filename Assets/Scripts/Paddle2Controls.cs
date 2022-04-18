@@ -21,6 +21,7 @@ public class Paddle2Controls : MonoBehaviour
     {
         transform.localScale += growSize;
 
+
     }
 
     // Start is called before the first frame update
